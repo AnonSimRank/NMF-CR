@@ -8,6 +8,8 @@ NMF-CR is a model to implement link prediction based on non-negative matrix fact
 
 ![LCR](https://github.com/AnonSimRank/NMF-CR/blob/main/LCR.png)
 
+
+
 when $\alpha_{0}=1$, $\alpha_{1}=1$, $\beta_{0}=1$ , NMF_CR_general.py degenerates into NMF_CR.py
 
 (2) utils.py contains some common used functions, e.g., train_test_split to split dataset into training data and probe data.
