@@ -43,7 +43,7 @@ weight_mat = np.array(weight_mat)
 # ############################################## train ################################################################
 lambda_0 = 0.1
 lambda_1 = 0.1
-max_iter_num = 10
+max_iter_num = 20000
 k = 256
 thre_val = 1.0e-8
 U, V, C= DecomAdjMat(col_normalization, weight_mat, lambda_0, lambda_1, max_iter_num, k, thre_val)
