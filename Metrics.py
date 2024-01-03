@@ -16,7 +16,7 @@ def precision(A_train, A_probe, A_pred):
     precision_score = non_observed_true[order][:L].mean()
     return precision_score
 
-# https://github.com/Glebzok/Link-prediction-with-NMF-AP/blob/main/Link%20prediction%20with%20NMF-AP.ipynb
+# reference https://github.com/Glebzok/Link-prediction-with-NMF-AP/blob/main/Link%20prediction%20with%20NMF-AP.ipynb
 def AUC(A_train, A_probe, A_pred, n=100):
 
     A_shape = A_train.shape[0]
