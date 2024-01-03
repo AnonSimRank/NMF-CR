@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.metrics import precision_recall_curve
 
+### reference https://github.com/Glebzok/Link-prediction-with-NMF-AP/blob/main/Link%20prediction%20with%20NMF-AP.ipynb ########
 def precision(A_train, A_probe, A_pred):
 
     non_observed = (A_train.A == 0)
@@ -48,7 +49,7 @@ def pr_curve(A_train, A_probe, A_pred):
     precision, recall, _ = precision_recall_curve(non_observed_true, non_observed_pred)
     return recall, precision
 
-
+# https://github.com/Glebzok/Link-prediction-with-NMF-AP/blob/main/Link%20prediction%20with%20NMF-AP.ipynb
 def AUC(A_train, A_probe, A_pred, n=100):
 
     A_shape = A_train.shape[0]
