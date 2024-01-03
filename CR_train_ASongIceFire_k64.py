@@ -62,27 +62,12 @@ np.savetxt(pred_data_file, pred_data)
 precision_score = Metrics.precision(train_data, test_data, pred_data)
 print("precision:", precision_score)
 
-
-recall_score = Metrics.recall(train_data, test_data, pred_data)
-print("recall:", recall_score)
-
-
-f_score = Metrics.F_score(precision_score, recall_score)
-print("f_score:", f_score)
-
-
 auc_score = Metrics.AUC(train_data, test_data, pred_data, n=1000)
 print("auc_score:", auc_score)
 
 
 precision_score_file = save_file_dir + "/" + "precision_score.txt"
 np.savetxt(precision_score_file, np.array([precision_score]))
-
-recall_score_file = save_file_dir + "/" + "recall_score.txt"
-np.savetxt(recall_score_file, np.array([recall_score]))
-
-f_score_file = save_file_dir + "/" + "f_score.txt"
-np.savetxt(f_score_file, np.array([f_score]))
 
 auc_score_file = save_file_dir + "/" + "auc_score.txt"
 np.savetxt(auc_score_file, np.array([auc_score]))
