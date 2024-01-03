@@ -16,39 +16,6 @@ def precision(A_train, A_probe, A_pred):
     precision_score = non_observed_true[order][:L].mean()
     return precision_score
 
-
-def recall(A_train, A_probe, A_pred):
-
-    non_observed = (A_train.A == 0)
-    non_observed_true = (A_probe.A[non_observed] > 0).astype('int')
-
-    non_observed_pred = A_pred[non_observed]
-
-    order = non_observed_pred.argsort()[::-1]
-
-    L = (A_probe != 0).sum()
-
-    recall_score = non_observed_true[order][:L].sum() / non_observed_true.sum()
-
-    return recall_score
-
-
-def F_score(precision_score, recall_score):
-
-    f_score = 2 * precision_score * recall_score / (precision_score + recall_score)
-
-    return f_score
-
-
-def pr_curve(A_train, A_probe, A_pred):
-
-    non_observed = (A_train.A == 0)
-    non_observed_true = (A_probe.A[non_observed] > 0).astype('int')
-    non_observed_pred = A_pred[non_observed]
-
-    precision, recall, _ = precision_recall_curve(non_observed_true, non_observed_pred)
-    return recall, precision
-
 # https://github.com/Glebzok/Link-prediction-with-NMF-AP/blob/main/Link%20prediction%20with%20NMF-AP.ipynb
 def AUC(A_train, A_probe, A_pred, n=100):
 
